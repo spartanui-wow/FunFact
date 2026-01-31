@@ -8,21 +8,44 @@ FunFact.L = L
 local FactLists = {}
 local FactModule = nil ---@type FunFact.Module
 
+---@class FunFact.DB.DeathScreen
+---@field enabled boolean Whether the death screen is enabled
+---@field showTimer boolean Whether to show the countdown timer
+---@field rotationInterval number Seconds between fact rotations
+---@field enabledCategories table<string, boolean> Which fact categories are enabled for death screen
+---@field customMessages table<number, string> User-added death messages
+---@field position table<string, any> Saved frame position
+
 ---@class FunFact.DB
+---@field DeathScreen FunFact.DB.DeathScreen Death screen settings
 local DBdefaults = {
 	Output = 'GUILD',
 	Channel = '',
 	FactList = 'random',
 	ChannelData = {
 		['**'] = {
-			sentCount = 0
-		}
+			sentCount = 0,
+		},
 	},
 	FactData = {
 		['**'] = {
-			sentCount = 0
-		}
-	}
+			sentCount = 0,
+		},
+	},
+	DeathScreen = {
+		enabled = true,
+		showTimer = true,
+		rotationInterval = 30,
+		enabledCategories = {
+			['**'] = true,
+		},
+		customMessages = {},
+		position = {
+			point = 'TOP',
+			x = 0,
+			y = -100,
+		},
+	},
 }
 
 function FunFact:isInTable(tab, frameName)
@@ -31,7 +54,7 @@ function FunFact:isInTable(tab, frameName)
 	end
 	for _, v in ipairs(tab) do
 		if v ~= nil and frameName ~= nil then
-			if (strlower(v) == strlower(frameName)) then
+			if strlower(v) == strlower(frameName) then
 				return true
 			end
 		end
@@ -40,13 +63,13 @@ function FunFact:isInTable(tab, frameName)
 end
 
 function FunFact:OnInitialize()
-	FunFact.BfDB = LibStub('AceDB-3.0'):New('FunFactDB', {profile = DBdefaults})
+	FunFact.BfDB = LibStub('AceDB-3.0'):New('FunFactDB', { profile = DBdefaults })
 	FunFact.DB = FunFact.BfDB.profile ---@type FunFact.DB
 
 	-- Register with LibAT Logger if available
 	if LibAT and LibAT.Logger then
 		FunFact.logger = LibAT.Logger.RegisterAddon('FunFact')
-		FunFact.logger.info("FunFact initialized")
+		FunFact.logger.info('FunFact initialized')
 	end
 end
 
@@ -54,7 +77,7 @@ function FunFact:GetFact()
 	local FactList = FunFact.DB.FactList
 
 	-- If set to random pick a list to use.
-	while (FactList == 'random') do
+	while FactList == 'random' do
 		local tmp = FactLists[math.random(0, #FactLists - 1)]
 		if tmp then
 			FactList = tmp.value
@@ -95,14 +118,14 @@ function FunFact:IsInChatLockdown()
 	end
 
 	-- Convert enum to human-readable string
-	local reasonText = "Unknown reason"
+	local reasonText = 'Unknown reason'
 	if lockdownReason then
 		if lockdownReason == Enum.ChatMessagingLockdownReason.ActiveEncounter then
-			reasonText = "Active raid encounter"
+			reasonText = 'Active raid encounter'
 		elseif lockdownReason == Enum.ChatMessagingLockdownReason.ActiveMythicKeystoneOrChallengeMode then
-			reasonText = "Active Mythic+ or Challenge Mode"
+			reasonText = 'Active Mythic+ or Challenge Mode'
 		elseif lockdownReason == Enum.ChatMessagingLockdownReason.ActivePvPMatch then
-			reasonText = "Active PvP match"
+			reasonText = 'Active PvP match'
 		end
 	end
 
@@ -122,12 +145,12 @@ function FunFact:SendMessage(msg, prefix, ChannelOverride)
 		if isLocked then
 			-- Display in local UI instead
 			if self.window and self.window.tbFact then
-				self.window.tbFact:SetValue(string.format("[Chat Locked: %s] %s", reason or "Unknown", msg))
+				self.window.tbFact:SetValue(string.format('[Chat Locked: %s] %s', reason or 'Unknown', msg))
 			end
 
 			-- Log to LibAT Logger if available
 			if LibAT and LibAT.Logger and self.logger then
-				self.logger.warning(string.format("Cannot send fact to chat - Chat lockdown active: %s", reason or "Unknown"))
+				self.logger.warning(string.format('Cannot send fact to chat - Chat lockdown active: %s', reason or 'Unknown'))
 			end
 
 			-- Don't send the message
@@ -186,10 +209,10 @@ function FunFact:OnEnable()
 	self:RegisterChatCommand('funfact', 'ChatCommand')
 	self:RegisterChatCommand('fact', 'ChatCommand')
 
-	table.insert(FactLists, {text = 'Random', value = 'random'})
+	table.insert(FactLists, { text = 'Random', value = 'random' })
 
 	for name, submodule in FunFact:IterateModules() do
-		if (string.match(name, 'FactList_')) then
+		if string.match(name, 'FactList_') then
 			local codeName = string.sub(name, 10)
 			local displayname = codeName
 
@@ -203,7 +226,7 @@ function FunFact:OnEnable()
 			-- Toss the Displayname into the DB for easy loading
 			FunFact.DB.FactData[name].displayname = displayname
 
-			table.insert(FactLists, {text = displayname, value = codeName})
+			table.insert(FactLists, { text = displayname, value = codeName })
 		end
 	end
 
@@ -216,18 +239,12 @@ function FunFact:OnEnable()
 	window:SetMovable(true)
 	window:EnableMouse(true)
 	window:RegisterForDrag('LeftButton')
-	window:SetScript(
-		'OnDragStart',
-		function(frame)
-			frame:StartMoving()
-		end
-	)
-	window:SetScript(
-		'OnDragStop',
-		function(frame)
-			frame:StopMovingOrSizing()
-		end
-	)
+	window:SetScript('OnDragStart', function(frame)
+		frame:StartMoving()
+	end)
+	window:SetScript('OnDragStop', function(frame)
+		frame:StopMovingOrSizing()
+	end)
 
 	if window.PortraitContainer then
 		window.PortraitContainer:Hide()
@@ -258,23 +275,17 @@ function FunFact:OnEnable()
 	FactOptions:SetText(currentFactName)
 
 	-- Setup fact type dropdown
-	FactOptions:SetupMenu(
-		function(_, rootDescription)
-			for _, factInfo in ipairs(FactLists) do
-				local button =
-					rootDescription:CreateButton(
-					factInfo.text,
-					function()
-						FunFact.DB.FactList = factInfo.value
-						FactOptions:SetText(factInfo.text)
-					end
-				)
-				if FunFact.DB.FactList == factInfo.value then
-					button:SetRadio(true)
-				end
+	FactOptions:SetupMenu(function(_, rootDescription)
+		for _, factInfo in ipairs(FactLists) do
+			local button = rootDescription:CreateButton(factInfo.text, function()
+				FunFact.DB.FactList = factInfo.value
+				FactOptions:SetText(factInfo.text)
+			end)
+			if FunFact.DB.FactList == factInfo.value then
+				button:SetRadio(true)
 			end
 		end
-	)
+	end)
 
 	-- Output channel label
 	local Outputlbl = window:CreateFontString(nil, 'ARTWORK', 'GameFontNormalSmall')
@@ -287,14 +298,14 @@ function FunFact:OnEnable()
 	Output:SetSize(152, 22)
 
 	local outputItems = {
-		{text = L['Instance chat'], value = 'INSTANCE_CHAT'},
-		{text = RAID, value = 'RAID'},
-		{text = 'SAY', value = 'SAY'},
-		{text = 'YELL', value = 'YELL'},
-		{text = 'PARTY', value = 'PARTY'},
-		{text = 'GUILD', value = 'GUILD'},
-		{text = L['No chat'], value = 'SELF'},
-		{text = L['Custom channel'], value = 'CHANNEL'}
+		{ text = L['Instance chat'], value = 'INSTANCE_CHAT' },
+		{ text = RAID, value = 'RAID' },
+		{ text = 'SAY', value = 'SAY' },
+		{ text = 'YELL', value = 'YELL' },
+		{ text = 'PARTY', value = 'PARTY' },
+		{ text = 'GUILD', value = 'GUILD' },
+		{ text = L['No chat'], value = 'SELF' },
+		{ text = L['Custom channel'], value = 'CHANNEL' },
 	}
 
 	-- Find current output display name
@@ -308,28 +319,22 @@ function FunFact:OnEnable()
 	Output:SetText(currentOutputName)
 
 	-- Setup output dropdown
-	Output:SetupMenu(
-		function(_, rootDescription)
-			for _, outputInfo in ipairs(outputItems) do
-				local button =
-					rootDescription:CreateButton(
-					outputInfo.text,
-					function()
-						FunFact.DB.Output = outputInfo.value
-						Output:SetText(outputInfo.text)
-						if outputInfo.value == 'CHANNEL' then
-							Channel:Enable()
-						else
-							Channel:Disable()
-						end
-					end
-				)
-				if FunFact.DB.Output == outputInfo.value then
-					button:SetRadio(true)
+	Output:SetupMenu(function(_, rootDescription)
+		for _, outputInfo in ipairs(outputItems) do
+			local button = rootDescription:CreateButton(outputInfo.text, function()
+				FunFact.DB.Output = outputInfo.value
+				Output:SetText(outputInfo.text)
+				if outputInfo.value == 'CHANNEL' then
+					Channel:Enable()
+				else
+					Channel:Disable()
 				end
+			end)
+			if FunFact.DB.Output == outputInfo.value then
+				button:SetRadio(true)
 			end
 		end
-	)
+	end)
 
 	-- Channel name label
 	local Channellbl = window:CreateFontString(nil, 'ARTWORK', 'GameFontNormalSmall')
@@ -343,14 +348,11 @@ function FunFact:OnEnable()
 	Channel:SetAutoFocus(false)
 	Channel:SetMaxLetters(50)
 	Channel:SetText(FunFact.DB.Channel)
-	Channel:SetScript(
-		'OnTextChanged',
-		function(editBox, userInput)
-			if userInput then
-				FunFact.DB.Channel = editBox:GetText()
-			end
+	Channel:SetScript('OnTextChanged', function(editBox, userInput)
+		if userInput then
+			FunFact.DB.Channel = editBox:GetText()
 		end
-	)
+	end)
 
 	if FunFact.DB.Output == 'CHANNEL' then
 		Channel:Enable()
@@ -420,29 +422,20 @@ function FunFact:OnEnable()
 	window.FACT.Text:SetText('FACT!')
 	window.FACT.Text:SetTextColor(1, 1, 1, 1)
 
-	window.FACT:HookScript(
-		'OnDisable',
-		function(btn)
-			btn.Text:SetTextColor(0.6, 0.6, 0.6, 0.6)
-		end
-	)
+	window.FACT:HookScript('OnDisable', function(btn)
+		btn.Text:SetTextColor(0.6, 0.6, 0.6, 0.6)
+	end)
 
-	window.FACT:HookScript(
-		'OnEnable',
-		function(btn)
-			btn.Text:SetTextColor(1, 1, 1, 1)
-		end
-	)
+	window.FACT:HookScript('OnEnable', function(btn)
+		btn.Text:SetTextColor(1, 1, 1, 1)
+	end)
 
-	window.FACT:SetScript(
-		'OnClick',
-		function()
-			local fact = FunFact:GetFact()
-			FunFact:SendMessage(fact, true)
-			-- Also display in window
-			window.tbFact:SetValue(fact)
-		end
-	)
+	window.FACT:SetScript('OnClick', function()
+		local fact = FunFact:GetFact()
+		FunFact:SendMessage(fact, true)
+		-- Also display in window
+		window.tbFact:SetValue(fact)
+	end)
 
 	-- More? button using RemixPowerLevel style (side by side with FACT!)
 	window.MORE = CreateFrame('Button', nil, window)
@@ -462,26 +455,17 @@ function FunFact:OnEnable()
 	window.MORE.Text:SetText('More?')
 	window.MORE.Text:SetTextColor(1, 1, 1, 1)
 
-	window.MORE:HookScript(
-		'OnDisable',
-		function(btn)
-			btn.Text:SetTextColor(0.6, 0.6, 0.6, 0.6)
-		end
-	)
+	window.MORE:HookScript('OnDisable', function(btn)
+		btn.Text:SetTextColor(0.6, 0.6, 0.6, 0.6)
+	end)
 
-	window.MORE:HookScript(
-		'OnEnable',
-		function(btn)
-			btn.Text:SetTextColor(1, 1, 1, 1)
-		end
-	)
+	window.MORE:HookScript('OnEnable', function(btn)
+		btn.Text:SetTextColor(1, 1, 1, 1)
+	end)
 
-	window.MORE:SetScript(
-		'OnClick',
-		function()
-			FunFact:SendMessage(L['Would you like to know more?'])
-		end
-	)
+	window.MORE:SetScript('OnClick', function()
+		FunFact:SendMessage(L['Would you like to know more?'])
+	end)
 
 	-- BROWSE button (centered between FACT! and More?)
 	window.BROWSE = CreateFrame('Button', nil, window)
@@ -502,32 +486,28 @@ function FunFact:OnEnable()
 	window.BROWSE.Text:SetText('Browse')
 	window.BROWSE.Text:SetTextColor(1, 1, 1, 1)
 
-	window.BROWSE:HookScript(
-		'OnDisable',
-		function(btn)
-			btn.Text:SetTextColor(0.6, 0.6, 0.6, 0.6)
-		end
-	)
+	window.BROWSE:HookScript('OnDisable', function(btn)
+		btn.Text:SetTextColor(0.6, 0.6, 0.6, 0.6)
+	end)
 
-	window.BROWSE:HookScript(
-		'OnEnable',
-		function(btn)
-			btn.Text:SetTextColor(1, 1, 1, 1)
-		end
-	)
+	window.BROWSE:HookScript('OnEnable', function(btn)
+		btn.Text:SetTextColor(1, 1, 1, 1)
+	end)
 
-	window.BROWSE:SetScript(
-		'OnClick',
-		function()
-			FunFact:ShowBrowseWindow()
-		end
-	)
+	window.BROWSE:SetScript('OnClick', function()
+		FunFact:ShowBrowseWindow()
+	end)
 
 	window:Hide()
 	FunFact.window = window
 
 	-- Create Browse window for viewing all facts
 	FunFact:CreateBrowseWindow()
+
+	-- Initialize Death Screen module
+	if FunFact.DeathScreen then
+		FunFact.DeathScreen:Initialize()
+	end
 end
 
 ---Creates the Browse window for viewing all facts in a category
@@ -540,18 +520,12 @@ function FunFact:CreateBrowseWindow()
 	browse:SetMovable(true)
 	browse:EnableMouse(true)
 	browse:RegisterForDrag('LeftButton')
-	browse:SetScript(
-		'OnDragStart',
-		function(frame)
-			frame:StartMoving()
-		end
-	)
-	browse:SetScript(
-		'OnDragStop',
-		function(frame)
-			frame:StopMovingOrSizing()
-		end
-	)
+	browse:SetScript('OnDragStart', function(frame)
+		frame:StartMoving()
+	end)
+	browse:SetScript('OnDragStop', function(frame)
+		frame:StopMovingOrSizing()
+	end)
 
 	if browse.PortraitContainer then
 		browse.PortraitContainer:Hide()
@@ -573,25 +547,19 @@ function FunFact:CreateBrowseWindow()
 	browse.categoryDropdown:SetText('Random')
 
 	-- Setup category dropdown
-	browse.categoryDropdown:SetupMenu(
-		function(_, rootDescription)
-			for _, factInfo in ipairs(FactLists) do
-				local button =
-					rootDescription:CreateButton(
-					factInfo.text,
-					function()
-						FunFact.DB.FactList = factInfo.value
-						browse.categoryDropdown:SetText(factInfo.text)
-						FunFact.browseCurrentPage = 1
-						FunFact:UpdateBrowseWindow()
-					end
-				)
-				if FunFact.DB.FactList == factInfo.value then
-					button:SetRadio(true)
-				end
+	browse.categoryDropdown:SetupMenu(function(_, rootDescription)
+		for _, factInfo in ipairs(FactLists) do
+			local button = rootDescription:CreateButton(factInfo.text, function()
+				FunFact.DB.FactList = factInfo.value
+				browse.categoryDropdown:SetText(factInfo.text)
+				FunFact.browseCurrentPage = 1
+				FunFact:UpdateBrowseWindow()
+			end)
+			if FunFact.DB.FactList == factInfo.value then
+				button:SetRadio(true)
 			end
 		end
-	)
+	end)
 
 	-- Page info label
 	browse.pageLabel = browse:CreateFontString(nil, 'ARTWORK', 'GameFontNormal')
@@ -643,26 +611,17 @@ function FunFact:CreateBrowseWindow()
 	browse.prevButton.Text:SetText('< Previous')
 	browse.prevButton.Text:SetTextColor(1, 1, 1, 1)
 
-	browse.prevButton:HookScript(
-		'OnDisable',
-		function(btn)
-			btn.Text:SetTextColor(0.6, 0.6, 0.6, 0.6)
-		end
-	)
+	browse.prevButton:HookScript('OnDisable', function(btn)
+		btn.Text:SetTextColor(0.6, 0.6, 0.6, 0.6)
+	end)
 
-	browse.prevButton:HookScript(
-		'OnEnable',
-		function(btn)
-			btn.Text:SetTextColor(1, 1, 1, 1)
-		end
-	)
+	browse.prevButton:HookScript('OnEnable', function(btn)
+		btn.Text:SetTextColor(1, 1, 1, 1)
+	end)
 
-	browse.prevButton:SetScript(
-		'OnClick',
-		function()
-			FunFact:BrowsePreviousPage()
-		end
-	)
+	browse.prevButton:SetScript('OnClick', function()
+		FunFact:BrowsePreviousPage()
+	end)
 
 	-- Next page button
 	browse.nextButton = CreateFrame('Button', nil, browse)
@@ -682,26 +641,17 @@ function FunFact:CreateBrowseWindow()
 	browse.nextButton.Text:SetText('Next >')
 	browse.nextButton.Text:SetTextColor(1, 1, 1, 1)
 
-	browse.nextButton:HookScript(
-		'OnDisable',
-		function(btn)
-			btn.Text:SetTextColor(0.6, 0.6, 0.6, 0.6)
-		end
-	)
+	browse.nextButton:HookScript('OnDisable', function(btn)
+		btn.Text:SetTextColor(0.6, 0.6, 0.6, 0.6)
+	end)
 
-	browse.nextButton:HookScript(
-		'OnEnable',
-		function(btn)
-			btn.Text:SetTextColor(1, 1, 1, 1)
-		end
-	)
+	browse.nextButton:HookScript('OnEnable', function(btn)
+		btn.Text:SetTextColor(1, 1, 1, 1)
+	end)
 
-	browse.nextButton:SetScript(
-		'OnClick',
-		function()
-			FunFact:BrowseNextPage()
-		end
-	)
+	browse.nextButton:SetScript('OnClick', function()
+		FunFact:BrowseNextPage()
+	end)
 
 	-- Close button (center bottom)
 	browse.closeButton = CreateFrame('Button', nil, browse)
@@ -720,12 +670,9 @@ function FunFact:CreateBrowseWindow()
 	browse.closeButton.Text:SetText('Close')
 	browse.closeButton.Text:SetTextColor(1, 1, 1, 1)
 
-	browse.closeButton:SetScript(
-		'OnClick',
-		function()
-			browse:Hide()
-		end
-	)
+	browse.closeButton:SetScript('OnClick', function()
+		browse:Hide()
+	end)
 
 	browse:Hide()
 	FunFact.browseWindow = browse
@@ -807,9 +754,7 @@ function FunFact:UpdateBrowseWindow()
 	end
 
 	-- Update page label
-	FunFact.browseWindow.pageLabel:SetText(
-		string.format('Page %d of %d (%d total facts)', FunFact.browseCurrentPage, totalPages, totalFacts)
-	)
+	FunFact.browseWindow.pageLabel:SetText(string.format('Page %d of %d (%d total facts)', FunFact.browseCurrentPage, totalPages, totalFacts))
 
 	-- Enable/disable navigation buttons
 	if FunFact.browseCurrentPage <= 1 then
@@ -855,17 +800,32 @@ end
 
 function FunFact:ChatCommand(input)
 	if input and input ~= '' then
+		-- Check for death screen commands
+		local lowerInput = input:lower()
+		if lowerInput == 'iamsodead' then
+			if FunFact.DeathScreen then
+				FunFact.DeathScreen:Toggle()
+			end
+			return
+		elseif lowerInput == 'resetdead' then
+			if FunFact.DeathScreen then
+				FunFact.DeathScreen:ResetPosition()
+				print('FunFact: Death screen position reset to default.')
+			end
+			return
+		end
+
 		local AllowedChannels = {
 			'RAID',
 			'PARTY',
 			'GUILD',
 			'INSTANCE_CHAT',
 			'SAY',
-			'YELL'
+			'YELL',
 		}
 		input = input:upper()
 		if not FunFact:isInTable(AllowedChannels, input) then
-			print('FunFact Error! You specified "' .. input .. '" valid options are: SAY, YELL, INSTANCE_CHAT, RAID, PARTY, and GUILD')
+			print('FunFact Error! You specified "' .. input .. '" valid options are: SAY, YELL, INSTANCE_CHAT, RAID, PARTY, GUILD, IAMSODEAD, or RESETDEAD')
 			return
 		end
 

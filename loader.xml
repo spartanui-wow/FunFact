@@ -7,4 +7,5 @@
     <Include file="lang\localization.xml" />
 
     <Script file="FunFact.lua" />
+    <Script file="DeathScreen.lua" />
 </Ui>
