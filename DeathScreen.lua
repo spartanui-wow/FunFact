@@ -346,7 +346,7 @@ function DeathScreen:CreateFrame()
 
 	local frame = CreateFrame('Frame', 'FunFactDeathScreen', UIParent, 'BackdropTemplate')
 	frame:SetSize(780, 195)
-	frame:SetPoint('TOP', 0, -220)
+	frame:SetPoint('TOP', 0, -400)
 	frame:SetFrameStrata('FULLSCREEN_DIALOG')
 	frame:SetMovable(true)
 	frame:EnableMouse(true)
@@ -594,13 +594,13 @@ function DeathScreen:ResetPosition()
 	FunFact.DB.DeathScreen.position = {
 		point = 'TOP',
 		x = 0,
-		y = -220,
+		y = -400,
 		moved = false,
 	}
 
 	if self.frame then
 		self.frame:ClearAllPoints()
-		self.frame:SetPoint('TOP', UIParent, 'TOP', 0, -220)
+		self.frame:SetPoint('TOP', UIParent, 'TOP', 0, -400)
 	end
 
 	self:UpdateHintText()
@@ -627,7 +627,7 @@ function DeathScreen:Show(isTest)
 	local pos = FunFact.DB.DeathScreen.position
 	if pos and pos.point then
 		self.frame:ClearAllPoints()
-		self.frame:SetPoint(pos.point, UIParent, pos.point, pos.x or 0, pos.y or -220)
+		self.frame:SetPoint(pos.point, UIParent, pos.point, pos.x or 0, pos.y or -400)
 	end
 
 	-- Update hint text based on moved state
