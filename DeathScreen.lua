@@ -63,7 +63,7 @@ local DefaultDeathMessages = {
 	'FINISH HIM! ...OH WAIT, THEY DID',
 	"IT'S DANGEROUS TO GO ALONE. YOU WENT ANYWAY.",
 	'YOU HAVE DIED OF DYSENTERY',
-	'MISSION FAILED. WE\'LL GET \'EM NEXT TIME.',
+	"MISSION FAILED. WE'LL GET 'EM NEXT TIME.",
 	'YOUR PRINCESS IS IN ANOTHER GRAVEYARD',
 	'DO A BARREL ROLL! ...INTO YOUR GRAVE',
 	'ALL YOUR BASE ARE BELONG TO DEATH',
@@ -96,7 +96,7 @@ local DefaultDeathMessages = {
 	"I'VE MADE A HUGE MISTAKE",
 	'SURPRISE MECHANICS',
 	'AND I OOP-',
-	'SIR, THIS IS A WENDY\'S... GRAVEYARD',
+	"SIR, THIS IS A WENDY'S... GRAVEYARD",
 	'THEY DID SURGERY ON A GRAPE. THEY DID MURDER ON YOU.',
 	'OK BOOMER. OK DEAD.',
 	'IT BE LIKE THAT SOMETIMES',
@@ -134,9 +134,157 @@ local DefaultDeathMessages = {
 local DeathScreen = {}
 FunFact.DeathScreen = DeathScreen
 
+-- Role-specific death messages (25 each)
+local HealerDeathMessages = {
+	'HEALER DOWN! ...WAIT, YOU ARE THE HEALER',
+	'YOU HAD ONE JOB... HEAL YOURSELF',
+	'PHYSICIAN, HEAL THYSELF',
+	'WHO HEALS THE HEALER? NOBODY, APPARENTLY.',
+	'HEALING OTHERS: YES. HEALING SELF: NO.',
+	'THE RAID IS FINE. YOU ARE NOT.',
+	'MANA WAS FULL. HEALTH WAS NOT.',
+	'SHOULD HAVE USED A DEFENSIVE',
+	'FORGOT TO HEAL THE MOST IMPORTANT PERSON',
+	'YOUR HOTS COULD NOT SAVE YOU',
+	'DISPEL THAT DEATH DEBUFF... OH WAIT',
+	'THE GREEN BARS BETRAYED YOU',
+	'HEAL PRIORITY: TANK > DPS > YOU, APPARENTLY',
+	'EVEN YOUR OWN HEALS GAVE UP',
+	'STOOD IN FIRE WHILE HEALING EVERYONE ELSE',
+	'FOCUSED TOO HARD ON RAID FRAMES',
+	'YOUR HEALING METERS DIED WITH YOU',
+	'CARRIED THE RAID. DROPPED YOURSELF.',
+	'AT LEAST THE TANK IS ALIVE... RIGHT?',
+	'OVERHEALING YOURSELF: 0%',
+	'WHO NEEDS SELF-PRESERVATION ANYWAY?',
+	'HEALING EFFICIENCY: FATAL',
+	'YOU WERE TOO BUSY WATCHING HEALTH BARS',
+	'COOLDOWNS READY. YOU ARE NOT.',
+	'THE SPIRIT HEALER IS NOW YOUR CO-HEALER',
+}
+
+local TankDeathMessages = {
+	'PULLED TOO MUCH, EH?',
+	'FACE TANKING HAS ITS LIMITS',
+	'EVEN YOUR ARMOR GAVE UP',
+	'THE BOSS FOUND YOUR COOLDOWN GAP',
+	'THREAT ESTABLISHED. SURVIVAL NOT.',
+	'MAIN TANK DOWN! ...WHO PULLS NOW?',
+	'MITIGATION: 100%. SURVIVAL: 0%.',
+	'SHOULD HAVE KITED THAT ONE',
+	'YOUR SHIELD SENDS ITS CONDOLENCES',
+	'HEALER BLAMED. YOU KNOW IT WAS YOU.',
+	'DEFENSIVE COOLDOWNS ARE FOR USING',
+	'THE FLOOR TANK TAKES OVER',
+	'PULLED WALL-TO-WALL. DIED WALL-TO-FLOOR.',
+	"THAT'S ONE WAY TO DROP AGGRO",
+	'ACTIVE MITIGATION? MORE LIKE INACTIVE.',
+	'THOUGHT YOU WERE INVINCIBLE, HUH?',
+	'THE BOSS CRITTED YOUR EGO',
+	'TANKED EVERYTHING EXCEPT STAYING ALIVE',
+	'INCOMING DAMAGE EXCEEDED HEALER PATIENCE',
+	'PERHAPS LESS TRASH NEXT PULL?',
+	'YOU HELD AGGRO. BRIEFLY.',
+	'CONGRATULATIONS, YOU WIPED THE GROUP',
+	'RAID LEADER IS TYPING...',
+	'YOUR HEALTH BAR SAID GOODBYE',
+	'REPAIR BILL: YOUR DIGNITY',
+}
+
+local DPSDeathMessages = {
+	'IF YOU DID MORE DPS, YOU WOULD NOT BE DEAD',
+	'DEAD DPS IS ZERO DPS',
+	'SHOULD HAVE KILLED IT FASTER',
+	'MECHANICS ARE NOT A DPS LOSS IF YOU LIVE',
+	'YOUR PARSE DIED WITH YOU',
+	'PADDING METERS FROM THE GRAVEYARD?',
+	'TUNNELED THE BOSS. IGNORED THE MECHANIC.',
+	'THREAT ISSUES? IN THIS ECONOMY?',
+	'THE FLOOR IS NOT PART OF YOUR ROTATION',
+	"DPS'D SO HARD YOU FORGOT TO LIVE",
+	'STOOD IN BAD FOR THAT EXTRA CAST',
+	'GREED CAST: FATAL',
+	'YOUR DAMAGE METER STOPPED UPDATING',
+	'MAYBE INTERRUPT NEXT TIME?',
+	'PHASE TWO CLAIMED ANOTHER ONE',
+	'HEALERS HAVE PRIORITIES. YOU WERE NOT ONE.',
+	'AT LEAST YOU WERE TOP DPS... FOR A SECOND',
+	'EXECUTED THE ROTATION. GOT EXECUTED.',
+	"CAN'T PARSE FROM THE FLOOR",
+	'SOAK MECHANICS EXIST FOR A REASON',
+	'BLOODLUST COULD NOT SAVE YOU',
+	'SHOULD HAVE SAVED THAT DEFENSIVE',
+	'YOUR COOLDOWNS WILL MISS YOU',
+	'ENRAGE TIMER: YOU LOST',
+	'LOG THIS, WARCRAFTLOGS',
+}
+
+-- Easter egg messages for names ending in 'gale' (druid healer friend)
+local GaleDruidMessages = {
+	'REJUVENATION? REGROWTH? HELLO?!',
+	"LIFEBLOOM COULDN'T SAVE YOU THIS TIME, GALE",
+	'INNERVATE THIS, GALE',
+	'TRANQUILITY WOULD HAVE BEEN NICE, GALE',
+	'WILD GROWTH? MORE LIKE WILD DEATH, GALE',
+	"BEAR FORM WASN'T ENOUGH, HUH GALE?",
+	'SHOULD HAVE STAYED IN TREE FORM, GALE',
+	'EVEN NATURE ABANDONED YOU, GALE',
+	'IRONBARK YOURSELF NEXT TIME, GALE... OH WAIT',
+	'THE DREAM CALLED. IT SAID GIT GUD, GALE.',
+	'SWIFTMEND WAS OFF COOLDOWN, GALE',
+	'CENARION WARD SENDS REGRETS, GALE',
+}
+
+local GaleNonDruidMessages = {
+	'A DRUID WOULD NOT HAVE DIED FROM THAT... GALE.',
+	'SHOULD HAVE ROLLED DRUID, GALE.',
+	'YOUR DRUID WOULD HAVE LIVED, JUST SAYING.',
+	'IMAGINE DYING AS A NON-DRUID... GALE.',
+	'MISS YOUR HEALS YET, GALE?',
+	'THIS IS WHAT HAPPENS WHEN YOU BETRAY THE DREAM, GALE',
+	"NATURE'S CURE CAN'T SAVE YOU NOW, GALE",
+	'ELUNE IS DISAPPOINTED, GALE.',
+}
+
+---Gets the player's role (HEALER, TANK, DAMAGER, or nil)
+---@return string|nil
+local function GetPlayerRole()
+	local spec = GetSpecialization()
+	if spec then
+		local role = GetSpecializationRole(spec)
+		return role
+	end
+	return nil
+end
+
 ---Gets a random death message from defaults + user custom messages
 ---@return string
 function DeathScreen:GetDeathMessage()
+	local playerName = UnitName('player') or ''
+	local nameLower = playerName:lower()
+	local _, playerClass = UnitClass('player')
+	local playerRole = GetPlayerRole()
+
+	-- Easter egg: 20% chance for special message if name ends in 'gale'
+	if nameLower:sub(-4) == 'gale' and math.random(1, 100) <= 20 then
+		if playerClass == 'DRUID' then
+			return GaleDruidMessages[math.random(1, #GaleDruidMessages)]
+		else
+			return GaleNonDruidMessages[math.random(1, #GaleNonDruidMessages)]
+		end
+	end
+
+	-- 20% chance for role-specific message
+	if playerRole and math.random(1, 100) <= 20 then
+		if playerRole == 'HEALER' then
+			return HealerDeathMessages[math.random(1, #HealerDeathMessages)]
+		elseif playerRole == 'TANK' then
+			return TankDeathMessages[math.random(1, #TankDeathMessages)]
+		elseif playerRole == 'DAMAGER' then
+			return DPSDeathMessages[math.random(1, #DPSDeathMessages)]
+		end
+	end
+
 	local messages = {}
 
 	-- Add default messages
@@ -198,7 +346,7 @@ function DeathScreen:CreateFrame()
 
 	local frame = CreateFrame('Frame', 'FunFactDeathScreen', UIParent, 'BackdropTemplate')
 	frame:SetSize(780, 195)
-	frame:SetPoint('TOP', 0, -100)
+	frame:SetPoint('TOP', 0, -220)
 	frame:SetFrameStrata('FULLSCREEN_DIALOG')
 	frame:SetMovable(true)
 	frame:EnableMouse(true)
@@ -208,6 +356,8 @@ function DeathScreen:CreateFrame()
 	frame.bg = frame:CreateTexture(nil, 'BACKGROUND')
 	frame.bg:SetAllPoints()
 	frame.bg:SetAtlas('house-upgrade-reward-section-bg')
+	frame.bg:SetAtlas('runecarving-background-smoke')
+	frame.bg:SetAlpha(0.9)
 
 	-- Shift+drag to move, Ctrl+Shift+Click to reset
 	frame:SetScript('OnMouseDown', function(f, button)
@@ -261,6 +411,16 @@ function DeathScreen:CreateFrame()
 	frame.factText:SetWordWrap(true)
 	frame.factText:SetTextColor(1, 1, 1, 1)
 	frame.factText:SetText('')
+
+	-- Close button in top right
+	frame.closeButton = CreateFrame('Button', nil, frame)
+	frame.closeButton:SetSize(20, 20)
+	frame.closeButton:SetPoint('TOPRIGHT', frame, 'TOPRIGHT', -8, -8)
+	frame.closeButton:SetNormalAtlas('runecarving-icon-reagent-empty-error')
+	frame.closeButton:SetHighlightTexture('Interface\\Buttons\\UI-Panel-MinimizeButton-Highlight')
+	frame.closeButton:SetScript('OnClick', function()
+		DeathScreen:Hide()
+	end)
 
 	-- Timer text with spinner
 	frame.timerText = frame:CreateFontString(nil, 'OVERLAY', 'GameFontNormal')
@@ -413,13 +573,13 @@ function DeathScreen:ResetPosition()
 	FunFact.DB.DeathScreen.position = {
 		point = 'TOP',
 		x = 0,
-		y = -100,
+		y = -220,
 		moved = false,
 	}
 
 	if self.frame then
 		self.frame:ClearAllPoints()
-		self.frame:SetPoint('TOP', UIParent, 'TOP', 0, -100)
+		self.frame:SetPoint('TOP', UIParent, 'TOP', 0, -220)
 	end
 
 	self:UpdateHintText()
@@ -446,7 +606,7 @@ function DeathScreen:Show(isTest)
 	local pos = FunFact.DB.DeathScreen.position
 	if pos and pos.point then
 		self.frame:ClearAllPoints()
-		self.frame:SetPoint(pos.point, UIParent, pos.point, pos.x or 0, pos.y or -100)
+		self.frame:SetPoint(pos.point, UIParent, pos.point, pos.x or 0, pos.y or -220)
 	end
 
 	-- Update hint text based on moved state
@@ -495,6 +655,7 @@ function DeathScreen:Initialize()
 	eventFrame:RegisterEvent('PLAYER_DEAD')
 	eventFrame:RegisterEvent('PLAYER_ALIVE')
 	eventFrame:RegisterEvent('PLAYER_UNGHOST')
+	eventFrame:RegisterEvent('PLAYER_ENTERING_WORLD')
 
 	eventFrame:SetScript('OnEvent', function(_, event)
 		if event == 'PLAYER_DEAD' then
@@ -506,6 +667,13 @@ function DeathScreen:Initialize()
 			-- Don't hide if in test mode
 			if not DeathScreen.isTestMode then
 				DeathScreen:Hide()
+			end
+		elseif event == 'PLAYER_ENTERING_WORLD' then
+			-- Check if player is dead on login/reload
+			if UnitIsDeadOrGhost('player') then
+				C_Timer.After(0.5, function()
+					DeathScreen:Show(false)
+				end)
 			end
 		end
 	end)
