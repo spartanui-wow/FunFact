@@ -134,6 +134,9 @@ local DefaultDeathMessages = {
 local DeathScreen = {}
 FunFact.DeathScreen = DeathScreen
 
+-- Default position settings (change these to adjust default position)
+local DEFAULT_Y_OFFSET = -250
+
 -- Role-specific death messages (25 each)
 local HealerDeathMessages = {
 	'HEALER DOWN! ...WAIT, YOU ARE THE HEALER',
@@ -346,7 +349,7 @@ function DeathScreen:CreateFrame()
 
 	local frame = CreateFrame('Frame', 'FunFactDeathScreen', UIParent, 'BackdropTemplate')
 	frame:SetSize(780, 195)
-	frame:SetPoint('TOP', 0, -400)
+	frame:SetPoint('TOP', 0, DEFAULT_Y_OFFSET)
 	frame:SetFrameStrata('FULLSCREEN_DIALOG')
 	frame:SetMovable(true)
 	frame:EnableMouse(true)
@@ -373,17 +376,22 @@ function DeathScreen:CreateFrame()
 
 	frame:SetScript('OnMouseUp', function(f, button)
 		f:StopMovingOrSizing()
-		-- Save position and mark as moved
+		-- Save position only if moved from default
 		local point, _, _, x, y = f:GetPoint()
 		if FunFact.DB and FunFact.DB.DeathScreen then
 			-- Check if position differs from default
-			local isDefault = (point == 'TOP' and math.abs(x) < 1 and math.abs(y + 100) < 1)
-			FunFact.DB.DeathScreen.position = {
-				point = point,
-				x = x,
-				y = y,
-				moved = not isDefault,
-			}
+			local isDefault = (point == 'TOP' and math.abs(x) < 1 and math.abs(y - DEFAULT_Y_OFFSET) < 1)
+			if isDefault then
+				-- Clear position from DB if at default
+				FunFact.DB.DeathScreen.position = nil
+			else
+				-- Only store position if user has moved it
+				FunFact.DB.DeathScreen.position = {
+					point = point,
+					x = x,
+					y = y,
+				}
+			end
 			-- Update hint text visibility
 			DeathScreen:UpdateHintText()
 		end
@@ -501,8 +509,9 @@ function DeathScreen:UpdateHintText()
 		return
 	end
 
+	-- If position exists in DB, user has moved it from default
 	local pos = FunFact.DB.DeathScreen.position
-	if pos and pos.moved then
+	if pos then
 		self.frame.hintText:SetText('Ctrl+Shift+Click to reset')
 	else
 		self.frame.hintText:SetText('Shift+Drag to move')
@@ -591,16 +600,12 @@ end
 
 ---Resets the frame position to default
 function DeathScreen:ResetPosition()
-	FunFact.DB.DeathScreen.position = {
-		point = 'TOP',
-		x = 0,
-		y = -400,
-		moved = false,
-	}
+	-- Clear position from DB to use default
+	FunFact.DB.DeathScreen.position = nil
 
 	if self.frame then
 		self.frame:ClearAllPoints()
-		self.frame:SetPoint('TOP', UIParent, 'TOP', 0, -400)
+		self.frame:SetPoint('TOP', UIParent, 'TOP', 0, DEFAULT_Y_OFFSET)
 	end
 
 	self:UpdateHintText()
@@ -623,11 +628,15 @@ function DeathScreen:Show(isTest)
 		self:CreateFrame()
 	end
 
-	-- Restore saved position
+	-- Restore saved position only if user has moved it, otherwise use default
 	local pos = FunFact.DB.DeathScreen.position
 	if pos and pos.point then
 		self.frame:ClearAllPoints()
-		self.frame:SetPoint(pos.point, UIParent, pos.point, pos.x or 0, pos.y or -400)
+		self.frame:SetPoint(pos.point, UIParent, pos.point, pos.x or 0, pos.y or DEFAULT_Y_OFFSET)
+	else
+		-- Use default position
+		self.frame:ClearAllPoints()
+		self.frame:SetPoint('TOP', UIParent, 'TOP', 0, DEFAULT_Y_OFFSET)
 	end
 
 	-- Update hint text based on moved state

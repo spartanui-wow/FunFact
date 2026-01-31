@@ -40,11 +40,7 @@ local DBdefaults = {
 			['**'] = true,
 		},
 		customMessages = {},
-		position = {
-			point = 'TOP',
-			x = 0,
-			y = -100,
-		},
+		-- position is intentionally NOT set here - nil means use DEFAULT_Y_OFFSET from DeathScreen.lua
 	},
 }
 
