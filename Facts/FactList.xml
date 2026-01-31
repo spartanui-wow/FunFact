@@ -5,11 +5,15 @@
 	<Script file="Bees.lua" />
 	<Script file="Cats.lua" />
 	<Script file="DadJokes.lua" />
+	<Script file="Dinosaurs.lua" />
 	<Script file="Dogs.lua" />
 	<Script file="Flags.lua" />
 	<Script file="Food.lua" />
+	<Script file="Movies.lua" />
+	<Script file="Myths.lua" />
 	<Script file="Nachos.lua" />
 	<Script file="Pizza.lua" />
+	<Script file="Space.lua" />
 	<Script file="Tacos.lua" />
 	<Script file="Technology.lua" />
 	<Script file="Ukraine.lua" />

@@ -193,4 +193,7 @@ module.Facts = {
 	'In "Mass Effect 2," you can find a planet that references the movie "Pitch Black" with a description of a dangerous creature lurking in the dark.',
 	'The game "GoldenEye 007" for the Nintendo 64 was one of the first games to feature a zoomable sniper rifle.',
 	'In "The Last of Us," the games fungus-based infection is inspired by the real-world Cordyceps fungus, which takes over insects.',
+	'Yugioh has made more money than X-Men, Lord of The Rings, James Bond, Call of Duty, Superman, Star Trek, WoW, or League of Legends.',
+	'Star Wars Knights of the Old Republic II initially sold more copies than World of Warcraft, which released at the same time.',
+	'Prehistoric hunter-gatherer tribes had an average group limit of 50 people. Incidentally, modern research shows that maximum group player cohesiveness in games occurs at a limit of 50 players.',
 }
