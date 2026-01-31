@@ -178,5 +178,5 @@ module.Facts = {
 	'The flag of Mongolia includes the Soyombo symbol, which represents freedom and independence, a significant symbol during the 1911 revolution against Qing China.',
 	'The flag of Peru features colors that were chosen by General José de San Martín, inspired by a flock of flamingos.',
 	"The flag of Romania's colors were chosen for their symbolism and connection to the 1848 Revolution, representing fraternity, justice, and liberty.",
-	'The flag of El Salvador features five flags to represent the Federal Republic of Central America, a union of states in the early 19th century.'
+	'The flag of El Salvador features five flags to represent the Federal Republic of Central America, a union of states in the early 19th century.',
 }

@@ -4,7 +4,7 @@ module.desciption = 'Ukraine Facts'
 
 module.Facts = {
 	"Ukraine's history is intertwined with Russia's history. The first Russian state, the Kievan Rus (9th-13th centuries AD), headed by the Rurik dynasty, was centered in Kiev, the capital of modern Ukraine.",
-	"Ukraine's name comes from a word meaning “borderland.\"",
+	'Ukraine\'s name comes from a word meaning “borderland."',
 	"One of Ukraine's national dishes is salo, cured pig fat. It is traditionally served cold with garlic, onion, and pickle.",
 	'Ukrainians wear their wedding rings on the right hand rather than the left.',
 	'Pornography is illegal in Ukraine, except for "medical purposes."',
@@ -56,8 +56,8 @@ module.Facts = {
 	"Ukraine obtained its independence peacefully, as a result of the collapse of the Soviet Union. Decades later, Ukraine maintained that record with the “Orange Revolution,” a peaceful protest that succeeded in forcing out corrupt leaders in Ukraine's national government.",
 	"Ukraine's national anthem is titled “Ukraine Has Not Perished Yet.”",
 	'The first gas lamp was invented in Lviv, Ukraine',
-	"Ukrainians celebrate \"Kupala Night,\" a summer holiday. One of this holiday's traditions involves young couples jumping over a fire. Legend holds that if the boy and girl can maintain their hand-hold, their love will last forever.",
+	'Ukrainians celebrate "Kupala Night," a summer holiday. One of this holiday\'s traditions involves young couples jumping over a fire. Legend holds that if the boy and girl can maintain their hand-hold, their love will last forever.',
 	"After the dissolution of the Soviet Union, Ukraine's economy was in turmoil, resulting in much of Ukraine operating on the barter system.",
 	"Ukraine was the world's first state to give up its nuclear arsenal. Their last remaining Soviet-era nuclear warheads were removed and dismantled in 1996.",
-	'Ukraine has declared actor Steven Seagal a national security risk and banned him from the country.'
+	'Ukraine has declared actor Steven Seagal a national security risk and banned him from the country.',
 }

@@ -98,7 +98,7 @@ module.Facts = {
 	'Cats make very little noise when they walk around. The thick, soft pads on their paws allow them to sneak up on their prey -- or you!',
 	"Cats' rough tongues can lick a bone clean of any shred of meat.",
 	"Cats use their long tails to balance themselves when they're jumping or walking along narrow ledges.",
-	"Cats use their whiskers to \"feel\" the world around them in an effort to determine which small spaces they can fit into. A cat's whiskers are generally about the same width as its body. (This is why you should never, EVER cut their whiskers.)",
+	'Cats use their whiskers to "feel" the world around them in an effort to determine which small spaces they can fit into. A cat\'s whiskers are generally about the same width as its body. (This is why you should never, EVER cut their whiskers.)',
 	'Cats walk like camels and giraffes: They move both of their right feet first, then move both of their left feet. No other animals walk this way.',
 	'Male cats are more likely to be left-pawed, while female cats are more likely to be right-pawed.',
 	'Though cats can notice the fast movements of their prey, it often seems to them that slow-moving objects are actually stagnant.',
@@ -498,5 +498,5 @@ module.Facts = {
 	'The first known cat video was recorded in 1894.',
 	'There are about 88 million pet cats in the United States, which makes them the most popular pet in the country!',
 	"Two hundred feral cats prowl the park at Disneyland, doing their part to control rodents — the ones who don't wear funny outfits and speak in squeaky voices.",
-	'White cats with blue eyes are prone to deafness.'
+	'White cats with blue eyes are prone to deafness.',
 }

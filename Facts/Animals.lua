@@ -302,5 +302,5 @@ module.Facts = {
 	'The Big Five is a group of animals of Africa: cape buffalo, elephant, leopard, lion and rhino.',
 	'The slowest fish is the sea horse, which moves along at about 0.01 mph (0.016 km/h).',
 	'Millions of trees are accidentally planted by squirrels that bury nuts and then forget where they hid them.',
-	'The lifespan of a bush baby is 14 years.'
+	'The lifespan of a bush baby is 14 years.',
 }

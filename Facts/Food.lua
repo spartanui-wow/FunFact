@@ -1,7 +1,6 @@
 local FunFact = FunFact
 local module = FunFact:NewModule('FactList_Food')
-module.desciption =
-	"That stuff most people sutff shove in their pie hole. We aren't going to talk about what karen does."
+module.desciption = "That stuff most people sutff shove in their pie hole. We aren't going to talk about what karen does."
 
 module.Facts = {
 	'A survey showed 29% of adults say they have been splashed or scalded by hot drinks while dunking biscuits.',
@@ -127,5 +126,5 @@ module.Facts = {
 	'Iowa has a massive state food-focused fair ',
 	'Every year the Iowa State Fair rolls around as the largest state event in Iowa and one of the oldest and largest agricultural and industrial expositions in the country. If you find yourself in Iowa early August, check out the nearly 200 food stands and 70 treats sold on a stick. ',
 	"Kentucky's state soft drink is Ale-8-One",
-	"The Kentucky born soda still thrives today as the state's official soft drink. You can toss it into tons of recipes, and even purchase apparel with the logo."
+	"The Kentucky born soda still thrives today as the state's official soft drink. You can toss it into tons of recipes, and even purchase apparel with the logo.",
 }

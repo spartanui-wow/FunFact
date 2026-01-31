@@ -48,7 +48,7 @@ module.Facts = {
 	'Regular honeybees—which perform multiple jobs in their lifetime—will change their brain chemistry before taking up a new gig.',
 	'When aging bees do jobs usually reserved for younger members, their brain stops aging. In fact, their brain ages in reverse.',
 	"To reinforce their hives, bees use a resin from poplar and evergreen trees called propolis. It's basically beehive glue. Although bees use it as caulk, humans use it to fight off bacteria, viruses, and fungi.",
-	"Honeybees make out faces the same way we do. They take parts—like eyebrows, lips, and ears—and cobble them together to make out the whole face. It's called \"configular processing,\" and it might help computer scientists improve face recognition technology",
+	'Honeybees make out faces the same way we do. They take parts—like eyebrows, lips, and ears—and cobble them together to make out the whole face. It\'s called "configular processing," and it might help computer scientists improve face recognition technology',
 	'Cats are not bees. Infact cats can be just as alergic to bee stings as humans.',
 	'It is said that Beeyonce is the queen bee.',
 	'The practice of beekeeping dates back at least 4,500 years',
@@ -118,5 +118,5 @@ module.Facts = {
 	'Some worker bees have the job of being an “undertaker bee” and are in charge of removing dead bees from the hive.',
 	'Due to colony collapse disorder, bees have been dying off at a rate of approximately 30% per year.',
 	'In Wisconsin, beekeepers can apply to have their honey certified as pure and use “Wisconsin certified honey” on their packaging.',
-	'Bees hate human breath.'
+	'Bees hate human breath.',
 }

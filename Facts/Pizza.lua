@@ -28,7 +28,7 @@ module.Facts = {
 	'Pizzas are Delivered to the White House on Inauguration Day.',
 	'The term "pizza" was first recorded in the 10th century in a Latin manuscript from the Southern Italian town of Gaeta.',
 	"Lombardi's in New York City was the first pizzeria in the United States, established in 1905.",
-	"Gennaro Lombardi, the owner of Lombardi's, is often called the \"Patriarch of Pizza\".",
+	'Gennaro Lombardi, the owner of Lombardi\'s, is often called the "Patriarch of Pizza".',
 	'The "Pizza Margherita" displays the colors of the Italian flag: green (basil), white (mozzarella), and red (tomato).',
 	'A "Pizzaiolo" is the term for a pizza chef or pizza maker.',
 	'In 2012, the world record for the "Most Varieties of Cheese on a Pizza" was set with 101 different cheese types.',
@@ -74,7 +74,7 @@ module.Facts = {
 	'Pizza is the most photographed food on Instagram.',
 	'In 2005, the Canadian Space Agency delivered a pizza to astronaut Chris Hadfield while he was orbiting the Earth on the ISS.',
 	'The world record for eating a 12" pizza is just 23.62 seconds.',
-	"Domino's Pizza canceled their \"30 minutes or less\" delivery guarantee after facing several lawsuits.",
+	'Domino\'s Pizza canceled their "30 minutes or less" delivery guarantee after facing several lawsuits.',
 	'In Brazil, pizza is often eaten with ketchup or mayonnaise as a topping.',
 	'In 2016, a robot-made pizza, from start to finish, was developed by a startup in Silicon Valley.',
 	'The most expensive pizza commercially available costs £2,150 and is sold at Maze restaurant in London, UK.',
@@ -100,5 +100,5 @@ module.Facts = {
 	'In 2009, a pizzeria in New York City created a "Luxury Pizza" priced at $1,000, which included six types of caviar and fresh lobster.',
 	'The "Quattro Stagioni" pizza represents the four seasons with different toppings for each section of the pizza.',
 	'In 2012, a pizza made in Rome broke the world record for the longest pizza ever made, stretching over 1.2 km (0.75 miles).',
-	'Sweden has unique pizza toppings such as banana curry pizza and "kebab pizza" with döner kebab meat and sauce.'
+	'Sweden has unique pizza toppings such as banana curry pizza and "kebab pizza" with döner kebab meat and sauce.',
 }

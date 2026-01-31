@@ -218,5 +218,5 @@ module.Facts = {
 	"Why don't scientists trust atoms? Because they make up everything!",
 	'What do you call someone with no body and no nose? Nobody knows.',
 	"Why don't eggs tell secrets? They'd crack each other up!",
-	"Did you hear the rumor about butter? Well, I'm not going to spread it!"
+	"Did you hear the rumor about butter? Well, I'm not going to spread it!",
 }

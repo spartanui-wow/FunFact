@@ -6,7 +6,7 @@ module.Facts = {
 	"Puppies love games such as hide and seek! Hide, then call your pup's name so she can try to find you.",
 	'Dogs can learn more than 1000 words.',
 	'Big happy "helicopter" tail wagging is one sign of a really nice dog',
-	"Upright, stiff, rapid tail movement is not wagging or \"friendly\" but indicates a dog who's rather excited and focused.",
+	'Upright, stiff, rapid tail movement is not wagging or "friendly" but indicates a dog who\'s rather excited and focused.',
 	'Puppies grow to half their body weight in the first four to five months!',
 	'Puppies then take a year or more to gain the other half of their body weight.',
 	'Puppies can sleep 18 to 20 hours a day during that rapid body growth phase.',
@@ -84,7 +84,7 @@ module.Facts = {
 	'Paul McCartney of the Beatles recorded a high pitched whistle at the end of "A Day in the Life" for his dog.',
 	'Max, Jake, Maggie and Molly are the most popular dog names.',
 	"Spiked dog collars were used to protect dogs' throats from wolf attacks in ancient Greece.",
-	"Walt Disney's family dog -- named Sunnee -- was the inspiration behind \"Lady and the Tramp.\"",
+	'Walt Disney\'s family dog -- named Sunnee -- was the inspiration behind "Lady and the Tramp."',
 	'Teams of dogs compete for the fastest time without errors in Flyball races.',
 	'A German Shepherd named Orient accompanied her blind owner Bill Irwin as he became the first blind person to through-hike the 2,100-mile Appalachian Trail in 1990.',
 	'Chihuahuas are born with soft spots in their skulls, just like human babies.',
@@ -142,5 +142,5 @@ module.Facts = {
 	"A dog's nose print is unique, and similar to human fingerprints that no two are the same.",
 	'Bloodhound dogs have the best sense of smell of all dogs, and have been used to track down criminals since the middle ages.',
 	'The Beagle and the Border Collie are the dogs that bark the most.',
-	'A survey found that 33% of dog owners talk to their dogs on the phone when they are away, or leave messages on the answering machine.'
+	'A survey found that 33% of dog owners talk to their dogs on the phone when they are away, or leave messages on the answering machine.',
 }

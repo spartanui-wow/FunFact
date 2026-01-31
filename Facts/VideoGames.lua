@@ -9,7 +9,7 @@ module.Facts = {
 	'The longest video game marathon on a single game is 35 hours and was achieved by Carrie Swidecki in 2019, playing Just Dance.',
 	'The most critically acclaimed game of all time is "The Legend of Zelda: Ocarina of Time," which has a Metacritic score of 99/100.',
 	'The first game with a hidden "Easter egg" was "Adventure" for the Atari 2600. The secret room displaying the creators name, Warren Robinett, was hidden in the game.',
-	"The character Mario from Nintendo's Mario series was originally known as Jumpman in the 1981 game \"Donkey Kong.\"",
+	'The character Mario from Nintendo\'s Mario series was originally known as Jumpman in the 1981 game "Donkey Kong."',
 	'The highest-grossing entertainment release is not a movie but a video game: "Grand Theft Auto V," which earned $1 billion in its first three days.',
 	'The term "gamer" was first used in 1985.',
 	'The first gaming console to use CDs was the Amiga CD32, released in 1993.',
@@ -192,5 +192,5 @@ module.Facts = {
 	'The game "Spore" allows players to create and evolve their lifeform, with over 500 million creations made by players.',
 	'In "Mass Effect 2," you can find a planet that references the movie "Pitch Black" with a description of a dangerous creature lurking in the dark.',
 	'The game "GoldenEye 007" for the Nintendo 64 was one of the first games to feature a zoomable sniper rifle.',
-	'In "The Last of Us," the games fungus-based infection is inspired by the real-world Cordyceps fungus, which takes over insects.'
+	'In "The Last of Us," the games fungus-based infection is inspired by the real-world Cordyceps fungus, which takes over insects.',
 }
