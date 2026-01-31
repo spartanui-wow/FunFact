@@ -5,14 +5,14 @@
 [![GitHub release](https://img.shields.io/github/release/wutname1/FunFact.svg)](https://wow.curseforge.com/projects/FunFact)
 [![GitHub issues](https://img.shields.io/github/issues-raw/wutname1/FunFact.svg?logo=github)](https://github.com/Wutname1/FunFact/issues)
 
-Share fun facts with your friends in WoW! Over 2,500 facts about animals, food, games, and more.
+Share fun facts with your friends in WoW! Over 3,600 facts about animals, food, games, and more.
 
 ![FunFact Screenshot](https://media.forgecdn.net/attachments/1505/150/factwindow-png.png)
 
 ## What Does It Do?
 
 - Shows random facts you can share in chat
-- Pick from 15 different fact categories
+- Pick from 19 different fact categories
 - Death Screen: See facts when you die (with funny messages!)
 
 ## Death Screen
@@ -53,22 +53,26 @@ Test the death screen:
 | Category    | Count |
 | ----------- | ----- |
 | USA         | 595   |
-| WoW         | 530+  |
+| WoW         | 524   |
 | Cats        | 496   |
 | Animals     | 300   |
 | Dad Jokes   | 216   |
-| Video Games | 190   |
+| Video Games | 196   |
 | Flags       | 176   |
 | Dogs        | 140   |
 | Food        | 124   |
 | Bees        | 115   |
+| Dinosaurs   | 200   |
+| Movies      | 100   |
+| Space       | 100   |
+| Myths       | 100   |
 | Tacos       | 99    |
 | Pizza       | 98    |
 | Tech        | 90    |
-| Ukraine     | 54    |
+| Ukraine     | 57    |
 | Nachos      | 50    |
 
-**Total: 2,500+ facts!**
+**Total: 3,700+ facts!**
 
 ## Sample Facts
 
@@ -77,6 +81,10 @@ Test the death screen:
 - Cats walk like camels and giraffes
 - The Karazhan Crypts contain unused developer test rooms
 - Florida has more toll roads than any other state
+- T-Rex had the strongest bite of any land animal ever
+- The Wilhelm Scream has been used in over 400 films
+- Thor's hammer Mjolnir was forged by dwarves in Norse mythology
+- A day on Venus is longer than a year on Venus
 
 ## Support
 
