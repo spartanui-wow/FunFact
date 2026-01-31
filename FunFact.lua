@@ -563,12 +563,12 @@ function FunFact:CreateBrowseWindow()
 
 	-- Page info label
 	browse.pageLabel = browse:CreateFontString(nil, 'ARTWORK', 'GameFontNormal')
-	browse.pageLabel:SetPoint('TOP', categoryLbl, 'BOTTOM', 0, -15)
+	browse.pageLabel:SetPoint('TOPLEFT', browse, 'TOPLEFT', 18, -65)
 	browse.pageLabel:SetText('Page 1 of 1')
 
 	-- Scroll frame for facts
 	local scrollFrame = CreateFrame('ScrollFrame', nil, browse)
-	scrollFrame:SetPoint('TOPLEFT', browse.pageLabel, 'BOTTOMLEFT', 18, -15)
+	scrollFrame:SetPoint('TOPLEFT', browse, 'TOPLEFT', 18, -90)
 	scrollFrame:SetPoint('BOTTOMRIGHT', browse, 'BOTTOMRIGHT', -28, 45)
 
 	-- Add background texture
