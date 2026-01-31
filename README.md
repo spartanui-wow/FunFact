@@ -1,58 +1,88 @@
-# Facts. Fun Facts.
+# FunFact
 
 [![Package and release](https://github.com/Wutname1/FunFact/workflows/Package%20and%20release/badge.svg)](https://github.com/Wutname1/FunFact/actions)
 [![Discord](https://img.shields.io/discord/265564257347829771.svg?logo=discord)](https://discord.gg/J8wJGtz)
 [![GitHub release](https://img.shields.io/github/release/wutname1/FunFact.svg)](https://wow.curseforge.com/projects/FunFact)
 [![GitHub issues](https://img.shields.io/github/issues-raw/wutname1/FunFact.svg?logo=github)](https://github.com/Wutname1/FunFact/issues)
 
-### Some example facts for you to inform your companions with:
+Share fun facts with your friends in WoW! Over 2,500 facts about animals, food, games, and more.
 
-- Queens have a stinger, but they dont leave the hive to help defend it
-- Pizza Wasn’t Popular in America Until After WWII
-- Cats walk like camels and giraffes: They move both of their right feet first, then move both of their left feet. No other animals walk this way.
-- Florida has more toll roads and bridges than any other state in the Union
-- Dogs see much better than humans at night because they have a special light reflecting layer behind their eyes.
-- Frozen Margarita was invented in Texas by Mariano Martinez in 1971
+![FunFact Screenshot](https://media.forgecdn.net/attachments/1505/150/factwindow-png.png)
 
-## Slash Commands:
+## What Does It Do?
 
-Fun Facts can be used with 2 different slash commands `/funfact` or `/fact`
+- Shows random facts you can share in chat
+- Pick from 15 different fact categories
+- Death Screen: See facts when you die (with funny messages!)
 
-You can also macro fun facts by specifying the chat channel you want the fact to be in!
+## Death Screen
 
-`/fact party`
+Die in WoW? Now you get something fun to read!
 
-`/fact raid`
+![Death Screen Example](https://media.forgecdn.net/attachments/1505/149/funfact-png.png)
 
-`/fact guild`
+**Features:**
 
+- Funny death messages (115+ jokes)
+- Random facts that change every 30 seconds
+- Click the timer to skip to the next fact
+- Copy facts to chat with one click
+- Role-specific jokes (healer, tank, DPS)
+- Shift+Drag to move the window
+- Ctrl+Shift+Click to reset position
 
-## Currently loaded with Facts on:
+## Commands
 
-- 300 Random animal facts
-- 115 Bee facts
-- 496 Cat facts
-- 140 Dog facts
-- 176 Flag facts
-- 124 Food facts
-- 50 Nacho facts
-- 98 Pizza facts
-- 99 Taco facts
-- 90 Tech facts
-- 54 Ukraine facts
-- 595 USA facts
-- 190 Video Game facts
-- 28 World of Warcraft facts
+Type `/funfact` or `/fact` to open the main window.
 
-## And a few Jokes!
-- 216 Dad Jokes
+Send facts to chat:
 
-More Fact categories will be added over time! Have more facts? Send them to me!
+- `/fact party` - Send to party
+- `/fact raid` - Send to raid
+- `/fact guild` - Send to guild
+- `/fact say` - Say it out loud
+- `/fact yell` - Yell it!
 
-## Notes
+Test the death screen:
 
-Please submit bugs and feature requests at GitHub.
-Consider supporting future development by becoming a Patron or sending a one time donation
-For Support please join the SpartanUI Discord
+- `/funfact iamsodead` - Toggle death screen
+- `/funfact resetdead` - Reset window position
+
+## Fact Categories
+
+| Category    | Count |
+| ----------- | ----- |
+| USA         | 595   |
+| WoW         | 530+  |
+| Cats        | 496   |
+| Animals     | 300   |
+| Dad Jokes   | 216   |
+| Video Games | 190   |
+| Flags       | 176   |
+| Dogs        | 140   |
+| Food        | 124   |
+| Bees        | 115   |
+| Tacos       | 99    |
+| Pizza       | 98    |
+| Tech        | 90    |
+| Ukraine     | 54    |
+| Nachos      | 50    |
+
+**Total: 2,500+ facts!**
+
+## Sample Facts
+
+- Queens have a stinger, but they don't leave the hive to help defend it
+- Pizza wasn't popular in America until after WWII
+- Cats walk like camels and giraffes
+- The Karazhan Crypts contain unused developer test rooms
+- Florida has more toll roads than any other state
+
+## Support
+
+Found a bug? Have more facts? Let us know!
+
+- [GitHub Issues](https://github.com/Wutname1/FunFact/issues)
+- [Discord](https://discord.gg/J8wJGtz)
 
 [![Patreon](https://www.spartanui.net/img/patreon.png)](https://www.patreon.com/SpartanUI)
