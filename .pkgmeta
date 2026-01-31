@@ -1,8 +1,12 @@
 package-as: FunFact
 
 ignore:
-    README.md
-    *.Definition.lua
+  - "*.md"
+  - "*.Definition.lua"
+
+manual-changelog:
+  filename: CHANGELOG.md
+  markup-type: markdown
 
 enable-nolib-creation: no
 
