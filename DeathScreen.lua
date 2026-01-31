@@ -422,14 +422,19 @@ function DeathScreen:CreateFrame()
 		DeathScreen:Hide()
 	end)
 
+	-- Clickable timer/spinner button to skip to next fact
+	frame.timerButton = CreateFrame('Button', nil, frame)
+	frame.timerButton:SetPoint('BOTTOM', frame, 'BOTTOM', 0, 50)
+	frame.timerButton:SetSize(150, 24)
+
 	-- Timer text with spinner
-	frame.timerText = frame:CreateFontString(nil, 'OVERLAY', 'GameFontNormal')
-	frame.timerText:SetPoint('BOTTOM', frame, 'BOTTOM', 0, 55)
+	frame.timerText = frame.timerButton:CreateFontString(nil, 'OVERLAY', 'GameFontNormal')
+	frame.timerText:SetPoint('CENTER', frame.timerButton, 'CENTER', 8, 0)
 	frame.timerText:SetTextColor(0.7, 0.7, 0.7, 1)
 	frame.timerText:SetText('Next fact in 30s')
 
 	-- Spinner animation texture
-	frame.spinner = frame:CreateTexture(nil, 'OVERLAY')
+	frame.spinner = frame.timerButton:CreateTexture(nil, 'OVERLAY')
 	frame.spinner:SetSize(16, 16)
 	frame.spinner:SetPoint('RIGHT', frame.timerText, 'LEFT', -5, 0)
 	frame.spinner:SetAtlas('UI-RefreshButton')
@@ -441,6 +446,22 @@ function DeathScreen:CreateFrame()
 	rotation:SetDuration(2)
 	rotation:SetSmoothing('NONE')
 	frame.spinnerAnim:SetLooping('REPEAT')
+
+	-- Click to load next fact
+	frame.timerButton:SetScript('OnClick', function()
+		DeathScreen:UpdateFact()
+		DeathScreen.timeRemaining = FunFact.DB.DeathScreen.rotationInterval
+		DeathScreen:UpdateTimer()
+	end)
+
+	-- Highlight on hover
+	frame.timerButton:SetScript('OnEnter', function()
+		frame.timerText:SetTextColor(1, 1, 1, 1)
+	end)
+
+	frame.timerButton:SetScript('OnLeave', function()
+		frame.timerText:SetTextColor(0.7, 0.7, 0.7, 1)
+	end)
 
 	-- Copy to Chat button
 	frame.copyButton = CreateFrame('Button', nil, frame)
