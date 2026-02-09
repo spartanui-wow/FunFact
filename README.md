@@ -1,9 +1,9 @@
 # FunFact
 
-[![Package and release](https://github.com/Wutname1/FunFact/workflows/Package%20and%20release/badge.svg)](https://github.com/Wutname1/FunFact/actions)
+[![Package and release](https://github.com/spartanui-wow/FunFact/workflows/Package%20and%20release/badge.svg)](https://github.com/spartanui-wow/FunFact/actions)
 [![Discord](https://img.shields.io/discord/265564257347829771.svg?logo=discord)](https://discord.gg/J8wJGtz)
-[![GitHub release](https://img.shields.io/github/release/wutname1/FunFact.svg)](https://wow.curseforge.com/projects/FunFact)
-[![GitHub issues](https://img.shields.io/github/issues-raw/wutname1/FunFact.svg?logo=github)](https://github.com/Wutname1/FunFact/issues)
+[![GitHub release](https://img.shields.io/github/release/spartanui-wow/FunFact.svg)](https://wow.curseforge.com/projects/FunFact)
+[![GitHub issues](https://img.shields.io/github/issues-raw/spartanui-wow/FunFact.svg?logo=github)](https://github.com/spartanui-wow/FunFact/issues)
 
 Share fun facts with your friends in WoW! Over 3,600 facts about animals, food, games, and more.
 
@@ -90,7 +90,7 @@ Test the death screen:
 
 Found a bug? Have more facts? Let us know!
 
-- [GitHub Issues](https://github.com/Wutname1/FunFact/issues)
+- [GitHub Issues](https://github.com/spartanui-wow/FunFact/issues)
 - [Discord](https://discord.gg/J8wJGtz)
 
 [![Patreon](https://www.spartanui.net/img/patreon.png)](https://www.patreon.com/SpartanUI)
