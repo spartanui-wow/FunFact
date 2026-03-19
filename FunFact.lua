@@ -314,6 +314,9 @@ function FunFact:OnEnable()
 	end
 	Output:SetText(currentOutputName)
 
+	-- Forward-declare so the dropdown callback can reference it
+	local Channel
+
 	-- Setup output dropdown
 	Output:SetupMenu(function(_, rootDescription)
 		for _, outputInfo in ipairs(outputItems) do
@@ -338,7 +341,7 @@ function FunFact:OnEnable()
 	Channellbl:SetText(L['Channel name:'])
 
 	-- Channel name editbox
-	local Channel = CreateFrame('EditBox', nil, window, 'InputBoxTemplate')
+	Channel = CreateFrame('EditBox', nil, window, 'InputBoxTemplate')
 	Channel:SetPoint('LEFT', Channellbl, 'RIGHT', 10, 0)
 	Channel:SetSize(230, 20)
 	Channel:SetAutoFocus(false)
