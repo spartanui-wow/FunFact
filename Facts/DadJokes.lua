@@ -1,6 +1,6 @@
 local FunFact = FunFact
 local module = FunFact:NewModule('FactList_DadJokes')
-module.desciption = 'Dad Jokes'
+module.description = 'Dad Jokes'
 
 module.Facts = {
 	"If you are being chased by a taxidermists, whatever you do, don't play dead",

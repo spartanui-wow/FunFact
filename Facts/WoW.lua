@@ -1,6 +1,6 @@
 local FunFact = FunFact
 local module = FunFact:NewModule('FactList_WoW')
-module.desciption = 'Facts about this game called World of Warcraft'
+module.description = 'Facts about this game called World of Warcraft'
 
 module.Facts = {
 	-- Real-world WoW facts (celebrities, news, culture)
@@ -18,7 +18,7 @@ module.Facts = {
 	'A 12-yr old Norwegian boy managed to survive a moose attack using tactics learned from playing WoW',
 	'A boy in China committed suicide by jumping off of a 24-storey building after a 36-hour video game marathon. His suicide note told about his addiction to Warcraft III and his intent to join his fellow players in heaven.',
 	'The director of Moon, Warcraft and the recently released Muted is the only son of the legendary singer David Bowie',
-	'Greg Street who earned a PhD in marine science, he latter became the lead designer of WoW.',
+	'Greg Street who earned a PhD in marine science, he later became the lead designer of WoW.',
 	"The director of 'Warcraft' is David Bowie's son.",
 	'Collectively speaking, humans have spent longer playing WoW than they have existed, as a species separate from chimpanzees (5.93 million years).',
 	'Robin Williams was a self-described hardcore gamer and enjoyed playing Warcraft. After his death, Blizzard created an NPC in WoW to commemorate him.',

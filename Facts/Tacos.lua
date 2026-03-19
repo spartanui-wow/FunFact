@@ -1,6 +1,6 @@
 local FunFact = FunFact
 local module = FunFact:NewModule('FactList_Taco')
-module.desciption = 'Taco facts'
+module.description = 'Taco facts'
 
 module.Facts = {
 	'The word "taco" originates from the Nahuatl word "tlahco," meaning "half or in the middle," referring to the way it is formed.',

@@ -1,6 +1,6 @@
 local FunFact = FunFact
 local module = FunFact:NewModule('FactList_Nachos')
-module.desciption = 'Delicious nacho facts'
+module.description = 'Delicious nacho facts'
 
 module.Facts = {
 	'Nachos were invented in 1943 by Ignacio "Nacho" Anaya in Piedras Negras, Mexico, when he created them for a group of U.S. military wives.',

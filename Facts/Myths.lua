@@ -1,6 +1,6 @@
 local FunFact = FunFact
 local module = FunFact:NewModule('FactList_Myths')
-module.desciption = 'Facts about mythology, legends, and folklore from around the world.'
+module.description = 'Facts about mythology, legends, and folklore from around the world.'
 module.displayname = 'Myths'
 
 module.Facts = {

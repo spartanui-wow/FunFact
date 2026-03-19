@@ -1,6 +1,6 @@
 local FunFact = FunFact
 local module = FunFact:NewModule('FactList_Flags')
-module.desciption = 'Fun with Flags, sheldon cooper would be proud.'
+module.description = 'Fun with Flags, sheldon cooper would be proud.'
 
 module.Facts = {
 	'Lichtenstein and Haiti had the same flag and only found out at the 1936 Olympics.',

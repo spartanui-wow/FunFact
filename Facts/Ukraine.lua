@@ -1,6 +1,6 @@
 local FunFact = FunFact
 local module = FunFact:NewModule('FactList_Ukraine')
-module.desciption = 'Ukraine Facts'
+module.description = 'Ukraine Facts'
 
 module.Facts = {
 	"Ukraine's history is intertwined with Russia's history. The first Russian state, the Kievan Rus (9th-13th centuries AD), headed by the Rurik dynasty, was centered in Kiev, the capital of modern Ukraine.",

@@ -1,6 +1,6 @@
 local FunFact = FunFact
 local module = FunFact:NewModule('FactList_VideoGames')
-module.desciption = 'Video Games facts'
+module.description = 'Video Games facts'
 
 module.Facts = {
 	'The first commercially successful video game was "Pong," created by Atari in 1972 as a simple table tennis simulation.',
@@ -84,7 +84,7 @@ module.Facts = {
 	'The first female protagonist in a video game was Samus Aran from "Metroid," released in 1986.',
 	'The first game to be played in outer space was "Starcraft," which was taken aboard the Space Shuttle Discovery in 1999.',
 	'The game "Crysis" (2007) was so graphically advanced that it became a benchmark for testing high-end computer performance for years.',
-	'In "Super Mario 64," Mario can lose his cap, and if you finish the game without it, hell be capless in the final cutscene.',
+	'In "Super Mario 64," Mario can lose his cap, and if you finish the game without it, he'll be capless in the final cutscene.',
 	'The first console to offer online connectivity was the Sega Dreamcast in 1999.',
 	'The "Animal Crossing" series was originally developed for the Nintendo 64 in Japan before it moved to the GameCube.',
 	'The creators of "Pokemon," Game Freak, started as a self-published video game magazine.',

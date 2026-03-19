@@ -1,6 +1,6 @@
 local FunFact = FunFact
 local module = FunFact:NewModule('FactList_Animals')
-module.desciption = 'A random assortment of facts about all animals'
+module.description = 'A random assortment of facts about all animals'
 
 module.Facts = {
 	'Gorillas can catch human colds and other illnesses.',
@@ -262,7 +262,7 @@ module.Facts = {
 	'The average dolphin eats one-third of its weight on food each day.',
 	"Goats and octopus' pupils of their eyes are rectangular.",
 	'African elephants only have four teeth to chew their food with.',
-	'The scales of a crocodile are made of certain, the same substance that hooves and fingernails are made of.',
+	'The scales of a crocodile are made of keratin, the same substance that hooves and fingernails are made of.',
 	'Crocodiles eat stones.',
 	'Crocodiles have brains no larger than a cigar.',
 	'Cheetahs were trained by man for hunting as long as 3000 BC.',

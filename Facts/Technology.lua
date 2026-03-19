@@ -1,6 +1,6 @@
 local FunFact = FunFact
 local module = FunFact:NewModule('FactList_Tech')
-module.desciption = 'Tech facts'
+module.description = 'Tech facts'
 
 module.Facts = {
 	'The first electronic computer ENIAC weighed more than 27 tons and took up 1800 square feet.',

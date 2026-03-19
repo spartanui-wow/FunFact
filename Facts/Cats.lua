@@ -1,6 +1,6 @@
 local FunFact = FunFact
 local module = FunFact:NewModule('FactList_Cats')
-module.desciption = 'Meow?'
+module.description = 'Meow?'
 
 module.Facts = {
 	"Cats can't taste sweetness.",
@@ -384,12 +384,12 @@ module.Facts = {
 	"It sucks for them, but cats can't taste sweet things. The upside to this is that, unlike dogs, most cats won't be that excited about sharing your dessert.[11]",
 	'Cats have between 230-250 bones in their body, some of their bones can fuse together with age hence there is no exact number.',
 	"Cats can jump up to 7 times their length…that's about 3 times as high as a dog can jump, you may have witnessed this is you tried the scare your cat with a cucumber trick.",
-	'Cats can hear 2 octaves higher than a human, which is how ultrasonic cat deterrants work….by broadcasting annoying high pitch noises which cats hate!',
+	'Cats can hear 2 octaves higher than a human, which is how ultrasonic cat deterrents work….by broadcasting annoying high pitch noises which cats hate!',
 	'Cats normally have 18 toes.',
 	"Cats can run as fast as 30mph when they absolutely need to (if they are being chased), this is a couple of miles per hour faster than Usain Bolt's top speed!",
 	'here is evidence that people have had cats as pets for over 11,500 years; a young wildcat was found buried with a human in Cyprus at a burial site believed to date from 9,500 B.C. [12]',
 	'The earliest evidence of widespread cat domestication comes from China around 5,300 years ago. Where cats were used to keep the rodent population in check and stop them from eating all their grain.[13]',
-	'When a family cat died in Ancient Egypt, the family mourned their loss by shaving their eyebrows. We think this is one tradition that should be bought back!',
+	'When a family cat died in Ancient Egypt, the family mourned their loss by shaving their eyebrows. We think this is one tradition that should be brought back!',
 	"There are 8 million pets cats in the UK, making them the UK's second favourite pet trailing narrowly behind dogs of which there are 9 million in the UK. [14]",
 	"Do you think you're the first pet owner to dress their kitty up? Think again. Ancient Egyptians dressed their cats in jewels and ornate costumes. Step your game up.",
 	'Cats represented sexuality and fertility in Ancient Egypt. The Egyptians also thought they were magic animals capable of bringing good luck.',

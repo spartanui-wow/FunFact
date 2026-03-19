@@ -1,6 +1,6 @@
 local FunFact = FunFact
 local module = FunFact:NewModule('FactList_USA')
-module.desciption = 'USA, USA, USA!'
+module.description = 'USA, USA, USA!'
 
 module.Facts = {
 	'The United States of America is also referred to as "the States", "the United States", "the U.S.", "the USA", and "America".',
@@ -155,7 +155,7 @@ module.Facts = {
 	'Cutting down a cactus in Arizona is a punishable offense and the maximum term in jail for the act could be 25 years. The saguaro cactus which is prevalent in Arizona takes a long time to grow.',
 	'Copper was discovered in Arizona is 185',
 	'The Grand Canyon National Park in Arizona sees 5 million visitors every year.',
-	'Because of the ability to view stars away from city lights and pollution, Tuscan, Arizona is called the Astronomy Capital of the World.',
+	'Because of the ability to view stars away from city lights and pollution, Tucson, Arizona is called the Astronomy Capital of the World.',
 	"The Gila monster lives In Arizona desert. Gila monsters are the largest lizards native to the United States. They get their name from Arizona's Gila River basin, where they were first discovered.",
 	'Arizona is the first of the three states with official state neckwear: the bola tie. The other two states that have the same official neckwear are New Mexico and Texas.',
 	'The Spanish were the first European visitors who arrived in Colorado in the 1500s.',
@@ -409,7 +409,7 @@ module.Facts = {
 	'About half of Arkansas is covered under forest.',
 	'The state is also home to some 300 native species of birds including bald eagles, blue jays, flycatchers and more.',
 	'Arkansas does not have any federally recognized lands or tribes which existed within the state.',
-	'Did you know that the first WalMart was opened in 1962 by Sam Walton in Rogers, Arkansas? It is interesting to note here that Walmart employes a staggering 3 million associates around the world.',
+	'Did you know that the first WalMart was opened in 1962 by Sam Walton in Rogers, Arkansas? It is interesting to note here that Walmart employs a staggering 3 million associates around the world.',
 	'Rice, soybeans, and wheat are some of the important crops from the region.',
 	'The poultry industry is one of the largest private employers in the state.',
 	'Arkansas imports a lot of coal from Wyoming and thus uses it for producing energy to meet the demand of its inhabitants. The state also generates its own nuclear and hydroelectric power for the purpose.',

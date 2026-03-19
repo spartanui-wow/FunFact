@@ -1,6 +1,6 @@
 local FunFact = FunFact
 local module = FunFact:NewModule('FactList_Bees')
-module.desciption = 'The best animals according to a 2018 poll of 2 beekeepers.'
+module.description = 'The best animals according to a 2018 poll of 2 beekeepers.'
 module.displayname = 'Bee'
 
 module.Facts = {
@@ -35,8 +35,8 @@ module.Facts = {
 	'Only worker bees sting, and only if they feel threatened and they die once they sting.',
 	'Queens have a stinger, but they dont leave the hive to help defend it.',
 	'It is estimated that 1100 honey bee stings are required to be fatal.',
-	'The worker bees produce honeycomb which ceigomprises hexagon shaped cells through the consumption of honey produced from the collected flower nectar.',
-	'To produce one pound of beeswax, six to ht pounds of honey are ingested',
+	'The worker bees produce honeycomb which comprises hexagon shaped cells through the consumption of honey produced from the collected flower nectar.',
+	'To produce one pound of beeswax, six to eight pounds of honey are ingested',
 	'Honey bees communicate with one another by dancing. More on their awesome sense of time, communication of distance and direction in "The Awesome Honeybee Dance".',
 	'During winter, honey bees feed on the honey they collected during the warmer months. They form a tight cluster in their hive to keep the queen and themselves warm.',
 	"A toxin in bee venom called melittin may prevent HIV. Melittin can kill HIV by poking holes into the virus's protective envelope.",
@@ -49,7 +49,7 @@ module.Facts = {
 	'When aging bees do jobs usually reserved for younger members, their brain stops aging. In fact, their brain ages in reverse.',
 	"To reinforce their hives, bees use a resin from poplar and evergreen trees called propolis. It's basically beehive glue. Although bees use it as caulk, humans use it to fight off bacteria, viruses, and fungi.",
 	'Honeybees make out faces the same way we do. They take parts—like eyebrows, lips, and ears—and cobble them together to make out the whole face. It\'s called "configular processing," and it might help computer scientists improve face recognition technology',
-	'Cats are not bees. Infact cats can be just as alergic to bee stings as humans.',
+	'Cats are not bees. In fact cats can be just as allergic to bee stings as humans.',
 	'It is said that Beeyonce is the queen bee.',
 	'The practice of beekeeping dates back at least 4,500 years',
 	'Approximately one third of the food we eat is the result of honey bee pollination',
@@ -91,7 +91,7 @@ module.Facts = {
 	'During the American Revolution, George Washington said “It was the cackling geese that saved Rome, but it was the bees that saved America.” Read the full story here.',
 	'Honey bees have 170 odorant receptors, and have a sense of smell 50 times more powerful than a dog.',
 	'Every bee colony has its own distinct scent so that members can identify each other.',
-	'Bes have 2 stomachs - one for eating, and one for storing nectar.',
+	'Bees have 2 stomachs - one for eating, and one for storing nectar.',
 	'Bees have existed for around 30 million years.',
 	'Hives produce 5 distinct substances: honey, beeswax, propolis, pollen, and royal jelly.',
 	'Newborn bees ask for food by sticking out their tongues at passing worker bees.',

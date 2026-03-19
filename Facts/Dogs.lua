@@ -1,6 +1,6 @@
 local FunFact = FunFact
 local module = FunFact:NewModule('FactList_Dogs')
-module.desciption = 'Mans best friend'
+module.description = 'Mans best friend'
 
 module.Facts = {
 	"Puppies love games such as hide and seek! Hide, then call your pup's name so she can try to find you.",
@@ -106,7 +106,7 @@ module.Facts = {
 	'Revolutionary War soldiers sometimes brought their dogs with them into battle. Such was the case with George Washington and his dog, Sweetlips.',
 	'The American Water Spaniel was the first hunting breed developed to retrieve from boats.',
 	'There are hundreds of different breeds of dogs, and around 400 million dogs in the world.',
-	'The most popular breed of dog is the Labrador, with their gentle nature, intelligence andobedience they make for excellent pets and reliable workers. They often work as guide dogs.',
+	'The most popular breed of dog is the Labrador, with their gentle nature, intelligence and obedience they make for excellent pets and reliable workers. They often work as guide dogs.',
 	'Dogs have much better smell than humans, and can detect different odors nearly 100 million times lower than humans can.',
 	'Dogs hearing is also much better, and they can hear sounds four times further away than humans.',
 	'An average dog will live to between 10 and 14 years of age.',
@@ -117,15 +117,15 @@ module.Facts = {
 	'Puppies are born blind, without teeth and the ability to hear. Their eyes only open at around 10 to 14 days old, and their hearing will start after this. Their teeth start coming through at 6 weeks.',
 	"During the first week of a dog's life, 90% of their time is spent sleeping, and 10% is spent eating.",
 	'Puppies are considered adults when they are one year old.',
-	'The domestic dog is a descendant of the grey wolf, in a process that took around 100,000years.',
+	'The domestic dog is a descendant of the grey wolf, in a process that took around 100,000 years.',
 	"The nickname “man's best friend” is believed to have come from a courtroom speech in Missouri America in 1870 where a farmer was suing his neighbor who shot his dog.",
 	'The very first animal to go into space was a dog, a Russian dog named Laika who travelled in the spacecraft Sputnik around the earth in 1957.',
 	"To many dogs showing a smile (baring your teeth) is an act of aggression. Most dogs don't smile with their mouths like people do, but show happiness and excitement by wagging their tails.",
 	"Small dogs are often called toy dogs, or lap dogs - because they're so small they look like a toy, or can easily fit on your lap.",
-	"There is a hunting dog that comes from Africa that cannot bark, it is the only dog likethis and the sound is makes is commonly known as 'barroo'.",
-	"The largest breed of dog in the world is the Irish Wolfhound, and the smallest dog breedis the Chihuahua. St. Bernard's are the heaviest breed of dogs.",
+	"There is a hunting dog that comes from Africa that cannot bark, it is the only dog like this and the sound is makes is commonly known as 'barroo'.",
+	"The largest breed of dog in the world is the Irish Wolfhound, and the smallest dog breed is the Chihuahua. St. Bernard's are the heaviest breed of dogs.",
 	'The fastest dog on earth can reach speeds of 45 miles an hour, and is the Greyhound.',
-	'The oldest dog who ever lived was a cattle dog from Australia called Bluey who lived tobe 29 years and 5 months old. In human terms that makes him over 160 years old!',
+	'The oldest dog who ever lived was a cattle dog from Australia called Bluey who lived to be 29 years and 5 months old. In human terms that makes him over 160 years old!',
 	'Dogs cannot eat raisins, grapes, onion, chocolate or garlic because it makes them very sick.',
 	"The first thing you should teach your dog is how to 'sit'.",
 	'When your dog goes to sleep you notice he turns in a circle a few times, this is an instinct from when they were a wild dog, as they did this to pat down the grass before they slept. Despite thousands of years, they still have this instinct.',
@@ -133,10 +133,10 @@ module.Facts = {
 	'Dogs see much better than humans at night because they have a special light reflecting layer behind their eyes.',
 	'Dogs hearts beat much faster than ours, between 10-120 beats a minute while humans are 70-80.',
 	'The world record for the heaviest dog ever recorded was set in 1989, an Old English Mastiff that weighed 343 pounds and was 8 feet 3 inches long.',
-	"The rock star Ozzy Osborne rescued his wife's Pomeranian from a coyote by wrestling thecoyote until it released the dog.",
-	'The most dogs ever owned by a single person was 5,000 Mastiffs which were owned by KublaKhan.',
+	"The rock star Ozzy Osborne rescued his wife's Pomeranian from a coyote by wrestling the coyote until it released the dog.",
+	'The most dogs ever owned by a single person was 5,000 Mastiffs which were owned by Kubla Khan.',
 	'The weirdest law about dogs is that in Paulding, Ohio police officers are allowed to bite a dog to get it to be quiet.',
-	'In Iran, it is against the law to own a dog as a pet, you need to be able to prove theyare a guard or hunting dog.',
+	'In Iran, it is against the law to own a dog as a pet, you need to be able to prove they are a guard or hunting dog.',
 	'There are cave paintings of dogs in Spain in Europe that are over 12,000 years old.',
 	'Even the presidents love their dogs, and President Franklin Roosevelt sent a destroyer to the Aleutian Islands just to get his dog Fala, who had been left behind.',
 	"A dog's nose print is unique, and similar to human fingerprints that no two are the same.",

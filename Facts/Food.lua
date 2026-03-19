@@ -1,12 +1,12 @@
 local FunFact = FunFact
 local module = FunFact:NewModule('FactList_Food')
-module.desciption = "That stuff most people sutff shove in their pie hole. We aren't going to talk about what karen does."
+module.description = "That stuff most people stuff shove in their pie hole. We aren't going to talk about what karen does."
 
 module.Facts = {
 	'A survey showed 29% of adults say they have been splashed or scalded by hot drinks while dunking biscuits.',
-	'Ortharexia Nervosa is an eating disorder where the sufferer is obsessed with eating healthy food.',
+	'Orthorexia Nervosa is an eating disorder where the sufferer is obsessed with eating healthy food.',
 	"Ketchup was sold in the 1830's as medicine.",
-	'Dry swallowing one teaspoon of sugar can commonly cure hic-ups.',
+	'Dry swallowing one teaspoon of sugar can commonly cure hiccups.',
 	'In Kentucky, it is illegal to carry an ice cream cone in your back pocket.',
 	'The fear of cooking is known as Mageirocophobia and is a recognized phobia.',
 	'The tea bag was introduced in 1908 by Thomas Sullivan of New York.',
