@@ -232,6 +232,7 @@ function FunFact:OnEnable()
 	window:SetSize(350, 325)
 	window:SetPoint('CENTER', 0, 0)
 	window:SetFrameStrata('DIALOG')
+	window:SetToplevel(true)
 	window:SetMovable(true)
 	window:EnableMouse(true)
 	window:RegisterForDrag('LeftButton')
@@ -516,6 +517,7 @@ function FunFact:CreateBrowseWindow()
 	browse:SetSize(600, 500)
 	browse:SetPoint('CENTER', 0, 0)
 	browse:SetFrameStrata('DIALOG')
+	browse:SetToplevel(true)
 	browse:SetMovable(true)
 	browse:EnableMouse(true)
 	browse:RegisterForDrag('LeftButton')
@@ -705,6 +707,7 @@ function FunFact:ShowBrowseWindow()
 	FunFact.browseCurrentPage = 1
 	FunFact:UpdateBrowseWindow()
 	FunFact.browseWindow:Show()
+	FunFact.browseWindow:Raise()
 end
 
 ---Updates the Browse window content for the current page
