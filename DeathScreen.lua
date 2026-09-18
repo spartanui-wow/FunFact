@@ -252,10 +252,24 @@ local GaleNonDruidMessages = {
 ---Gets the player's role (HEALER, TANK, DAMAGER, or nil)
 ---@return string|nil
 local function GetPlayerRole()
-	local spec = GetSpecialization()
-	if spec then
-		local role = GetSpecializationRole(spec)
-		return role
+	local C_SpecInfo = C_SpecializationInfo
+	local getSpec = (C_SpecInfo and C_SpecInfo.GetSpecialization) or GetSpecialization
+	if not getSpec then
+		return nil
+	end
+
+	local spec = getSpec()
+	if not spec then
+		return nil
+	end
+
+	-- GetSpecializationRole was removed alongside the flat spec globals; the role is the
+	-- 5th return of GetSpecializationInfo.
+	if C_SpecInfo and C_SpecInfo.GetSpecializationInfo then
+		return select(5, C_SpecInfo.GetSpecializationInfo(spec))
+	end
+	if GetSpecializationRole then
+		return GetSpecializationRole(spec)
 	end
 	return nil
 end
